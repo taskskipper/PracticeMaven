@@ -128,17 +128,5 @@ public class DataStoreRetrive {
 	}
 	
 	
-    private static boolean isRowBlank(Row row) {
-        if (row == null) {
-            return true;
-        }
-        for (int c = row.getFirstCellNum(); c < row.getLastCellNum(); c++) {
-            Cell cell = row.getCell(c);
-            if (cell != null && cell.getCellType() != CellType.BLANK) {
-                return false;
-            }
-        }
-        return true;
-    }
 
 }

@@ -85,18 +85,11 @@ public class DataStoreRetrive {
 			readStrings.add(cell.getStringCellValue());
 		}
 		
+		/**use this code to remove row and shift the remaining cells up
 		sheet.removeRow(r);
 		sheet.shiftRows(randomIndex+1, sheet.getLastRowNum(), -1);
-		
-        // Remove blank rows from the sheet
-//        for (int i = 0; i <= lastRowNum; i++) {
-//            Row row = sheet.getRow(i);
-//            if (isRowBlank(row)) {
-//                sheet.removeRow(row);
-//                lastRowNum--;
-//                i--;
-//            }
-//        }
+		*/
+
 		
 //		sheet.shiftRows(r.getRowNum() + 1, r.getRowNum() + 1, -1);
 		FileOutputStream fileOut = new FileOutputStream(file);

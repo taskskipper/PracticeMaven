@@ -20,11 +20,11 @@ public class CallReadData {
 //		List<String> strings = Arrays.asList(new FakeData().FIRST_NAME, new FakeData().LAST_NAME, new FakeData().COMPANY);
 
 		
-//		dr.addData(strings);
+		dr.addData(strings);
 		
-		List<String> data = dr.extractData();
-		System.out.println(data);
-		
+//		List<String> data = dr.extractData();
+//		System.out.println(data);
+//		
 		
 	}
 

@@ -80,8 +80,8 @@ public class DataStoringAndRetrive {
 		List<String> readStrings = new ArrayList<String>();
 		Random rand = new Random();
 		int randomIndex = rand.nextInt(sheet.getLastRowNum());
-		System.out.println(sheet.getLastRowNum());
-		System.out.println(randomIndex);
+//		System.out.println(sheet.getLastRowNum());
+//		System.out.println(randomIndex);
 
 		Row r = sheet.getRow(randomIndex);
 

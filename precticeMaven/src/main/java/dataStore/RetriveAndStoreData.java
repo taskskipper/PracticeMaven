@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -77,7 +78,14 @@ public class RetriveAndStoreData {
 		sheet = workbook.getSheetAt(0);
 		List<String> readStrings = new ArrayList<String>();
 		Random rand = new Random();
+		
 		int randomIndex = rand.nextInt(sheet.getLastRowNum());
+		
+		/** use this if you create header in excel file
+		IntStream randomIndexes = rand.ints(1, sheet.getLastRowNum());
+  		int randomIndex = randomIndex.findFirst().getAsInt();
+ */
+	
 //		System.out.println(sheet.getLastRowNum());
 //		System.out.println(randomIndex);
 

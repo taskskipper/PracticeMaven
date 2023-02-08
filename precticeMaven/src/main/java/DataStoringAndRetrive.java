@@ -25,7 +25,6 @@ public class DataStoringAndRetrive {
 	static Workbook workbook;
 	static Sheet sheet;
 	static int lastRowNum;
-//	FileInputStream fileIn = new FileInputStream(file);
 	
 	
 	public DataStoringAndRetrive() throws IOException {

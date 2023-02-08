@@ -13,7 +13,7 @@ public class CallReadData {
 	@Test
 	public void strings() throws IOException, InvalidFormatException {
 		
-		DataStoreRetrive dr = new DataStoreRetrive();
+		DataStoringAndRetrive dr = new DataStoringAndRetrive();
 		
 		FakeData fake = new FakeData();
 		List<String> strings = Arrays.asList(fake.FIRST_NAME, fake.LAST_NAME, fake.COMPANY);

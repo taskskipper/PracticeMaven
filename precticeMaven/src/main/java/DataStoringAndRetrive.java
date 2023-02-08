@@ -19,7 +19,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 import fakerPractice.FakeData;
 
-public class DataStoreRetrive {
+public class DataStoringAndRetrive {
 	
 	static File file = new File("strings.xlsx");
 	static Workbook workbook;
@@ -27,7 +27,7 @@ public class DataStoreRetrive {
 	static int lastRowNum;
 	
 	
-	public DataStoreRetrive() throws IOException {
+	public DataStoringAndRetrive() throws IOException {
 		
 		
 		if (file.exists()) {
@@ -111,7 +111,7 @@ public class DataStoreRetrive {
 		List<String> strings = Arrays.asList(fake.FIRST_NAME, fake.LAST_NAME, fake.COMPANY);
 
 		// Check if the file exists
-		DataStoreRetrive ds = new DataStoreRetrive();
+		DataStoringAndRetrive ds = new DataStoringAndRetrive();
 		ds.addData(strings);
 		
 		

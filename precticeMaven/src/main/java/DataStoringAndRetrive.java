@@ -21,10 +21,11 @@ import fakerPractice.FakeData;
 
 public class DataStoringAndRetrive {
 	
-	static File file = new File("strings.xlsx");
+	static File file = new File("runtimeData.xlsx");
 	static Workbook workbook;
 	static Sheet sheet;
 	static int lastRowNum;
+//	FileInputStream fileIn = new FileInputStream(file);
 	
 	
 	public DataStoringAndRetrive() throws IOException {
@@ -42,8 +43,12 @@ public class DataStoringAndRetrive {
 		} else {
 			// Create a new workbook and a new sheet
 			workbook = new XSSFWorkbook();
-			sheet = workbook.createSheet("names");
+			sheet = workbook.createSheet("AccOppNames");
 			lastRowNum = -1;
+			FileOutputStream fileOut = new FileOutputStream(file);
+			workbook.write(fileOut);
+			fileOut.close();
+			
 		}
 	}
 
@@ -108,19 +113,22 @@ public class DataStoringAndRetrive {
 		// Create a list of strings to store in the Excel sheet
 
 		FakeData fake = new FakeData();
-		List<String> strings = Arrays.asList(fake.FIRST_NAME, fake.LAST_NAME, fake.COMPANY);
+		List<String> strings = Arrays.asList(fake.FIRST_NAME, fake.LAST_NAME, fake.COMPANY, fake.DESCRIPTION);
 
 		// Check if the file exists
 		DataStoringAndRetrive ds = new DataStoringAndRetrive();
 		ds.addData(strings);
 		
-		
+//		
 		List<String> readStrings = ds.extractData();
 
 
-		System.out.println("random names fn :" + readStrings.get(0));
-		System.out.println("random names ln :" + readStrings.get(1));
-		System.out.println("random names cn :" + readStrings.get(2));
+		System.out.println(readStrings.size());
+		
+		
+//		System.out.println("random names fn :" + readStrings.get(0));
+//		System.out.println("random names ln :" + readStrings.get(1));
+//		System.out.println("random names cn :" + readStrings.get(2));
 
 
 

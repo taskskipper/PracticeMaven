@@ -10,7 +10,6 @@ public class JavaScriptWaiting {
 	public static void waitForJavascript(int maxWaitMillis, int pollDelimiter) throws InterruptedException {
 	    double startTime = System.currentTimeMillis();
 	    
-	    
 	    while (System.currentTimeMillis() < startTime + maxWaitMillis) {
 	        String prevState = driver.getPageSource();
 	        Thread.sleep(pollDelimiter); // <-- would need to wrap in a try catch

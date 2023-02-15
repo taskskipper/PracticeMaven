@@ -54,11 +54,11 @@ public class JavaDate {
          Calendar cal = Calendar.getInstance();
          Date presentday = cal.getTime();
          int year = cal.get(Calendar.YEAR);
-         cal.set(year, 2, 1); // 31 March of Year
+         cal.set(year, 2, 31); // 31 March of Year
          Date marchFirstOfYear = cal.getTime();
 
          if (presentday.after(marchFirstOfYear)) {
-        	 cal.set(year + 1, 2, 1);
+        	 cal.set(year + 1, 2, 31);
              return df.format(cal.getTime());
          } else {
              return df.format(marchFirstOfYear);

@@ -28,8 +28,9 @@ public class RetriveAndStoreData {
 	static Workbook workbook;
 	static Sheet sheet;
 	static int lastRowNum;
+	public List<String> data;
 
-	public RetriveAndStoreData() throws IOException {
+	public RetriveAndStoreData() throws IOException, InvalidFormatException {
 
 		if (file.exists()) {
 			// Read the existing workbook
@@ -37,9 +38,9 @@ public class RetriveAndStoreData {
 			workbook = new XSSFWorkbook(fileIn);
 			sheet = workbook.getSheetAt(0);
 			fileIn.close();
-
 			// Get the last row number
 			lastRowNum = sheet.getLastRowNum();
+			
 		} else {
 			// Create a new workbook and a new sheet
 			workbook = new XSSFWorkbook();
@@ -50,6 +51,18 @@ public class RetriveAndStoreData {
 			fileOut.close();
 
 		}
+		
+		try {
+			this.data = extractData();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public RetriveAndStoreData(String data) throws InvalidFormatException, IOException {
+
+		
+
 	}
 
 	public void addData(List<String> strings) throws IOException {
@@ -78,14 +91,15 @@ public class RetriveAndStoreData {
 		sheet = workbook.getSheetAt(0);
 		List<String> readStrings = new ArrayList<String>();
 		Random rand = new Random();
-		
+
 		int randomIndex = rand.nextInt(sheet.getLastRowNum());
-		
-		/** use this if you create header in excel file
-		IntStream randomIndexes = rand.ints(1, sheet.getLastRowNum());
-  		int randomIndex = randomIndex.findFirst().getAsInt();
- */
-	
+
+		/**
+		 * use this if you create header in excel file IntStream randomIndexes =
+		 * rand.ints(1, sheet.getLastRowNum()); int randomIndex =
+		 * randomIndex.findFirst().getAsInt();
+		 */
+
 //		System.out.println(sheet.getLastRowNum());
 //		System.out.println(randomIndex);
 
@@ -97,7 +111,8 @@ public class RetriveAndStoreData {
 
 		/**
 		 * use this code to remove row and shift the remaining cells up
-		 * sheet.removeRow(r); sheet.shiftRows(randomIndex+1, sheet.getLastRowNum(), -1);
+		 * sheet.removeRow(r); sheet.shiftRows(randomIndex+1, sheet.getLastRowNum(),
+		 * -1);
 		 */
 
 //		sheet.shiftRows(r.getRowNum() + 1, r.getRowNum() + 1, -1);
@@ -107,6 +122,20 @@ public class RetriveAndStoreData {
 
 		return readStrings;
 
+	}
+
+	public String getAccName() throws InvalidFormatException, IOException {
+
+		return data.get(0);
+	}
+
+	public String getConName() throws InvalidFormatException, IOException {
+
+		return data.get(1);
+	}
+
+	public String getOppName() throws InvalidFormatException, IOException {
+		return data.get(2);
 	}
 
 }

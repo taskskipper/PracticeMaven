@@ -16,9 +16,11 @@ public class readexcel {
 		
 		RetriveAndStoreData rd = new RetriveAndStoreData();
 		
-//		rd.addData(Arrays.asList(new FakeData().FIRST_NAME,new FakeData().COMPANY ));
+		rd.addData(Arrays.asList(new FakeData().FIRST_NAME,new FakeData().LAST_NAME, new FakeData().COMPANY ));
 		List<String> d = rd.extractData();
-		System.out.println(d);
+		System.out.println(rd.getAccName());
+		System.out.println(rd.getConName());
+		System.out.println(rd.getOppName());
 		
 
 	}

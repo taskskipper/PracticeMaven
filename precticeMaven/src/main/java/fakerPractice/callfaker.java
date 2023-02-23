@@ -4,10 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.testng.annotations.Test;
+
 public class callfaker {
 
 	
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
+	@Test
+	public void test() {
 		// TODO Auto-generated method stub
 
 //		WebDriver driver = new ChromeDriver();

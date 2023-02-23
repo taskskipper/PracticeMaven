@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-08T09:51:20 IST" name="Default suite" finished-at="2023-02-08T09:51:22 IST" duration-ms="1259">
+  <suite started-at="2023-02-22T17:48:58 IST" name="Suite" finished-at="2023-02-22T17:48:58 IST" duration-ms="325">
     <groups>
     </groups>
-    <test started-at="2023-02-08T09:51:20 IST" name="Default test" finished-at="2023-02-08T09:51:22 IST" duration-ms="1259">
-      <class name="CallReadData">
-        <test-method signature="strings()[pri:0, instance:CallReadData@5fd4f8f5]" started-at="2023-02-08T09:51:20 IST" name="strings" finished-at="2023-02-08T09:51:22 IST" duration-ms="1211" status="PASS">
+    <test started-at="2023-02-22T17:48:58 IST" name="Test" finished-at="2023-02-22T17:48:58 IST" duration-ms="325">
+      <class name="fakerPractice.callfaker">
+        <test-method signature="test()[pri:0, instance:fakerPractice.callfaker@a530d0a]" started-at="2023-02-22T17:48:58 IST" name="test" finished-at="2023-02-22T17:48:58 IST" duration-ms="284" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- strings -->
-      </class> <!-- CallReadData -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- test -->
+      </class> <!-- fakerPractice.callfaker -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

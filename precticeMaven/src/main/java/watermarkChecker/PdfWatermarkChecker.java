@@ -12,9 +12,29 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 public class PdfWatermarkChecker {
     
-    public static void main(String[] args) throws IOException {
-        String filePath = "C:\\Users\\acer\\Desktop\\my_details\\sscApplication\\surissc.pdf";
+    public static void main(String[] args) throws Exception {
+//        String filePath = "C:\\Users\\acer\\Desktop\\my_details\\sscApplication\\surissc.pdf";
+    	String filePath = "C:\\Users\\acer\\git\\PracticeMaven\\precticeMaven\\samplePdfs\\sample(Draft).pdf";
         PDDocument document = PDDocument.load(new File(filePath));
+        
+        
+        PDFReader pd = new PDFReader();
+        
+        pd.PDFBoxExtractImages(document);
+        
+        System.out.println("done");
+        
+        File a = new File("C:\\Users\\acer\\git\\PracticeMaven\\precticeMaven\\target\\20190326013505_IMG_6796-01.jpg");
+        File b = new File("C:\\\\Users\\\\acer\\\\git\\\\PracticeMaven\\\\precticeMaven\\\\target\\\\20190326013505_IMG_6796-03.jpg");
+        pd.imageCompare(a, b);
+        
+        
+        
+        
+        
+        
+        
+        
         
         boolean hasWatermark = false;
         
@@ -24,7 +44,7 @@ public class PdfWatermarkChecker {
         stripper.setEndPage(document.getNumberOfPages());
         String text = stripper.getText(document);
         System.out.println(text);
-        if (text.contains("CERTIFICATE")) {
+        if (text.contains("Draft")) {
             hasWatermark = true;
         }
         

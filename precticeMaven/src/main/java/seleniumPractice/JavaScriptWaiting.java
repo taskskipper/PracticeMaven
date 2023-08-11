@@ -2,6 +2,10 @@ package seleniumPractice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class JavaScriptWaiting {
 
@@ -22,13 +26,21 @@ public class JavaScriptWaiting {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		
+		driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
 		driver.manage().window().maximize();
 		driver.get("https://www.youtube.com/");
 		
 		waitForJavascript(50000, 500);
 		// TODO Auto-generated method stub
 
+		
+		Actions action = new Actions(driver);
+		
+		action.doubleClick();
+		
+		
 		System.out.println(driver.getTitle());
 		driver.quit();
 		

@@ -3,7 +3,7 @@ package javaPractice;
 import java.util.Date;
 import java.util.Scanner;
 
-import org.openqa.selenium.devtools.v107.runtime.model.TimeDelta;
+//import org.openqa.selenium.devtools.v107.runtime.model.TimeDelta;
 
 public class StopWatch {
 	
